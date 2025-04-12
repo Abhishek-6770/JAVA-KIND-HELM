@@ -50,7 +50,14 @@ jobs:
           --set image.tag=latest \
           --set image.pullPolicy=IfNotPresent
 
-    - name: Test App Endpoint
+    - name: Verify Kubernetes deployment
       run: |
-        sleep 10
-        curl --fail http://localhost:31234
+        kubectl get all
+        kubectl get svc hello-app
+        
+
+    - name: Port forward and test app
+      run: |
+        kubectl port-forward service/hello-app 8080:80 &
+        sleep 5
+        curl http://localhost:8080
