@@ -45,8 +45,8 @@ jobs:
       with:
         cluster_name: demo-cluster
 
-    - name: Load image into KIND
-      run: kind load docker-image java-hello-app:latest --name demo-cluster
+    # - name: Load image into KIND
+    #   run: kind load docker-image java-hello-app:latest --name demo-cluster
 
     - name: Set up kubectl
       uses: azure/setup-kubectl@v3
