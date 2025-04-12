@@ -76,5 +76,5 @@ jobs:
     - name: Port forward and test app
       run: |
         kubectl port-forward service/hello-app 8080:80 &
-        
+        sleep 15
         curl http://localhost:8080
