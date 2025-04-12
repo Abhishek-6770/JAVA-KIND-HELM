@@ -2,7 +2,7 @@ name: Java CI/CD with KIND and Helm
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "none" ]
 
 jobs:
   build-and-deploy:
