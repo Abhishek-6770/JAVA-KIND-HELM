@@ -49,3 +49,8 @@ jobs:
           --set image.repository=java-hello-app \
           --set image.tag=latest \
           --set image.pullPolicy=IfNotPresent
+
+    - name: Test App Endpoint
+      run: |
+        sleep 10
+        curl --fail http://localhost:31234
