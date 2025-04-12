@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: abhi8652/hello-kind-app 
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 31234
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
