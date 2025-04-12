@@ -52,6 +52,7 @@ jobs:
 
     - name: Verify Kubernetes deployment
       run: |
+        sleep 50
         kubectl get all
         kubectl get svc hello-app
         
@@ -59,5 +60,5 @@ jobs:
     - name: Port forward and test app
       run: |
         kubectl port-forward service/hello-app 8080:80 &
-        sleep 50
+        
         curl http://localhost:8080
